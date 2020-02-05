@@ -20,8 +20,13 @@ namespace RPCMS.Controllers
 
         public IActionResult Index()
         {
-            // This is test Fot SOurce Controll
-            return View();
+            var result = new List<DetailsModel>();
+            for (int i = 0; i <= 100; i++) 
+            {
+                var model = new DetailsModel() { Title = "First Test Title " + i, Description = "First Test Description " + i };
+                result.Add(model);
+            }
+            return View(result);
         }
 
         public IActionResult Privacy()
